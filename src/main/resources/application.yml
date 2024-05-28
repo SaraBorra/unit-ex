@@ -1,0 +1,27 @@
+
+environment: production
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/unit-ex
+    username: root
+    password: 9876
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  application:
+    name: hibernate
+
+    environment: test
+    spring:
+      datasource:
+        url: jdbc:h2:mem:testdb
+        username: test
+        password: test
+      jpa:
+        database: h2
+      h2:
+        console:
+          enabled: true
